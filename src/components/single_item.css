@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Vollkorn+SC');
+/*font-family: 'Vollkorn SC', serif;*/
+
+.itemTitle{
+	font-family: 'Vollkorn SC', serif;
+}
+.itemTitle>small{
+	font-size: 45%;
+	color: #607d8b;
+	margin-left: 25px;
+}
+.itemTitle>small>span{
+	color: #212121;
+}
+
+.card{
+	max-height: 95vh;
+	max-width: 90vw;
+}
+.card .card-image{
+	max-height: 600px;
+	max-width: 100%;
+}
+.card .card-image img{
+	max-height: 600px;
+	max-width: 100%;
+}
+.card .card-image .card-title{
+	color: black;
+	text-shadow:
+		-0.5px -0.5px 0 #000,
+		1px 1px 0 #000;
+}

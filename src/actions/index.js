@@ -47,7 +47,6 @@ export function deleteItem(id){
 }
 
 
-//clicking delete should redirect to home page; refer to adding function
-//add back button to each page
+
 //display when item was completed, when finished, when created
 //home page list color code list by complete or incomplete; or make it into two different list

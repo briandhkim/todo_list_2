@@ -13,6 +13,7 @@ class TodoList extends Component{
 	}
 
 	renderList(){
+		// console.log('at renderlist', this.props);
 		return this.props.todos.map((item, index)=>{
 			return(
 				 <li key={index} className="collection-item">
