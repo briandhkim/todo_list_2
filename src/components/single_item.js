@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {getSingle, toggleComplete} from '../actions';
 
@@ -28,6 +29,9 @@ class SingleItem extends Component{
 				<button className={`btn ${single.complete ? 'red' : 'cyan'} lighten-1`} onClick={()=>this.toggleComplete()}>
 					{single.complete ? 'revert' : 'complete'}
 				</button>
+				<div className="center-align">
+					<Link to="/" className="btn green darken-1"> Back </Link>
+				</div>
 			</div>
 		)
 	}
