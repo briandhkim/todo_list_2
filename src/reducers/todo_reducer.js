@@ -9,6 +9,9 @@ export default (state = DEFAULT_STATE, action) =>{
 		case types.GET_SINGLE:
 		case types.TOGGLE_COMPLETE:
 			return {...state, single: action.payload.data.todo};
+		case types.DELETE_ITEM:
+			console.log('at todo_reducer', action.payload.data.msg);
+			return {...state, single: action.payload.data.msg};
 		default:
 			return state;
 	}

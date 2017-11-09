@@ -38,9 +38,15 @@ export function toggleComplete(id){
 	};
 }
 
-// export function deleteItem(id){
-// 	const request = axios.delete(`${BASE_URL}/${id+API_KEY}`);
-// }
+export function deleteItem(id){
+	const request = axios.delete(`${BASE_URL}/${id+API_KEY}`);
+	return{
+		type: types.DELETE_ITEM,
+		payload: request
+	}
+}
+
+
 //clicking delete should redirect to home page; refer to adding function
 //add back button to each page
 //display when item was completed, when finished, when created
