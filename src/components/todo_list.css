@@ -1,0 +1,34 @@
+/*
+font-family: 'Vollkorn SC', serif;
+font-family: 'Acme', sans-serif;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Permanent Marker', cursive;
+*/
+
+.appTitle{
+	font-family: 'Vollkorn SC', serif;
+}
+a.addLink{
+	font-family: 'Permanent Marker', cursive;
+	text-shadow:
+		-0.75px -0.75px 0 #000,
+		1px 1px 0 #000;
+	background-color: #ab47bc ;
+}
+a.addLink:hover{
+	background-color: #ba68c8;
+}
+
+.collection-item{
+	font-family: 'Permanent Market', cursive;
+	font-size: 18px;
+}
+
+span.badge.new{
+	background-color: #d50000 !important;
+	font-size: 1.1rem !important;
+}
+span.badge{
+	font-family: 'Acme', sans-serif;
+	font-size: 1.1rem !important;
+}

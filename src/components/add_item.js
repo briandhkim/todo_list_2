@@ -23,15 +23,18 @@ class AddItem extends Component{
 	    }).css({
 	        position: 'fixed',
 	        right: '-150px',
-	        top: '125px',
-	        'width': '150px',
+	        top: '-125px',
+	        'width': '250px',
 	        'padding': '7px',
 	        'background-color': 'rgba(0,0,0,0.7)',
 	        'color' : 'white',
 	        'z-index': 1000,
-	        'border-radius': '15px'
+	        'border-radius': '15px',
+	        'font-family': "'Orbitron', sans-serif",
+	        'font-size': '15px'
 	    }).animate({
-	        right: '+=155px'
+	        right: '+=200px',
+	        top: '+=135px'
 	    }, 900);
 	    $('body').append(msg);
 	    setTimeout(function(){
@@ -43,7 +46,7 @@ class AddItem extends Component{
 		// console.log(values);
 		this.props.addItem(values).then(()=>{
 			this.props.history.push('/');
-			this.toastMsg('added new item', 3500);
+			this.toastMsg(`added new item: ${values.title}`, 3500);
 		});
 	}
 

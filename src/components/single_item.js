@@ -22,15 +22,18 @@ class SingleItem extends Component{
 		this.props.getSingle(this.props.match.params.id);
 	}  
 	toggleComplete(){
-		// console.log('toggle complete', this.props.single._id);
+		// console.log('toggle complete', this.props.single);
 		this.props.toggleComplete(this.props.single._id);
+		if(!this.props.single.complete){
+			this.toastMsg('item completed', 3000);
+		}
 	}
-	deleteTodo(){
-		// console.log('at deleteTodo in single_item', this.props);
+	deleteTodo(itemTitle){
+		console.log('at deleteTodo in single_item', itemTitle);
 		this.props.deleteItem(this.props.single._id).then(()=>{
 			this.props.history.push('/');
-			console.log(this.props);
-			this.toastMsg(`Notice: ${this.props.single.msg}`, 3500);
+			// console.log(this.props);
+			this.toastMsg(`Item deleted: ${itemTitle}`, 3500);
 		});
 	}
 
@@ -42,15 +45,18 @@ class SingleItem extends Component{
 	    }).css({
 	        position: 'fixed',
 	        right: '-150px',
-	        top: '125px',
-	        'width': '150px',
+	        top: '-125px',
+	        'width': '200px',
 	        'padding': '7px',
 	        'background-color': 'rgba(0,0,0,0.7)',
 	        'color' : 'white',
 	        'z-index': 1000,
-	        'border-radius': '15px'
+	        'border-radius': '15px',
+	        'font-family': "'Orbitron', sans-serif",
+	        'font-size': '15px'
 	    }).animate({
-	        right: '+=155px'
+	        right: '+=200px',
+	        top: '+=135px'
 	    }, 900);
 	    $('body').append(msg);
 	    setTimeout(function(){
@@ -81,10 +87,10 @@ class SingleItem extends Component{
 							<p>Status: {single.complete ? 'complete' : 'in progress'}</p>
 						</div>
 						<div className="card-action">
-							<button className={`btn ${single.complete ? 'amber' : 'cyan pulse'} lighten-1`} onClick={()=>this.toggleComplete()}>
-								{single.complete ? 'revert' : 'complete'}
+							<button className={`btn lighten-1 ${single.complete ? 'amber' : 'cyan btn-floating pulse'}`} onClick={()=>this.toggleComplete()}>
+								{single.complete ? 'revert' : <i className="material-icons">check</i>}
 							</button>
-							<button style={{marginLeft:'30px'}} className="btn red accent-4" onClick={()=>this.deleteTodo()}>
+							<button style={{marginLeft:'30px'}} className="btn red accent-4" onClick={()=>this.deleteTodo(single.title)}>
 								DELETE
 							</button>
 							<Link style={{marginLeft: '30px'}} to="/" className="btn green darken-1"> Back </Link>
